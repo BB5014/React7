@@ -19,7 +19,6 @@ onChange(e) {
 }
 submitForm(e) {
     e.preventDefault();
-
 const config = {
     method: "POST",
     headers: {
