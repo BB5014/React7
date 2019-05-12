@@ -28,6 +28,6 @@ textarea {
   border: green 1px solid;
 }
 
-.FormFilm input:not([type="submit"]) {
+.submit input:not([type="submit"]) {
   flex-grow: 1;
 }

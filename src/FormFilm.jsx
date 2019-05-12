@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import "./App.css";
 
 export default class FormFilm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nameFilm: "",
+      name: "",
       poster: "",
       comment: ""
     }
@@ -14,7 +13,7 @@ export default class FormFilm extends Component {
   }
 
   onChange(e) {
-    this.state({
+    this.setState({
       [e.target.name]: e.target.value,
     });
   }
@@ -35,12 +34,12 @@ export default class FormFilm extends Component {
         if (res.error) {
           alert(res.error);
         } else {
-          alert(`Le film est bien enregistré ${res}!`);
+          alert(`Le film est ajouté avec l'ID ${res}!`);
         }
       })
       .catch(e => {
         console.error(e);
-        alert("Erreur lors de téléchargement, recommence");
+        alert("Erreur lors du téléchargement, recommence");
       });
   }
 
@@ -53,10 +52,10 @@ export default class FormFilm extends Component {
               Nom du film
               <input
                 type="text"
-                name="nameFilm"
-                id="nameFilm"
+                name="name"
+                id="name"
                 onChange={this.onChange}
-                value={this.state.nameFilm}
+                value={this.state.name}
                 size={33}
               />
             </label>
